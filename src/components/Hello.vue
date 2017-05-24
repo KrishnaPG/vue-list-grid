@@ -1,21 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <listGrid :data=listGridData></listGrid>
+    <listGrid view='list' :data=listGridData :listRenderer=listRenderer></listGrid>
   </div>
 </template>
 
 <script>
 import listGrid from './listGrid'
+import listComponent from './listComponent';
 
 export default {
   name: 'hello',
   components: {
-    listGrid
+    listGrid, listComponent
   },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      listRenderer: listComponent,
       listGridData: [{
         title: 'Tapping into UGC with Offerpop',
         url: 'https://voltagead.com/tapping-ugc-offerpop/',

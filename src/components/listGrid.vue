@@ -6,9 +6,10 @@
 				<ul>
 					<li v-for="dataItem in data">{{dataItem.title}}, {{dataItem.url}}</li>
 				</ul>
+				<component :is="listRenderer" :data="data"></component>
 			</div>
 			<div v-if="view=='grid'" class="listGrid-gridView">
-				grid component
+				<component :is="gridRenderer"></component>
 			</div>
 		</div>		
 	</div>
@@ -18,7 +19,9 @@
 		name: 'listGrid',
 		props: {
 			'view': { type: String, default: 'list' },
-			'data': { default: () => {}	}
+			'data': { default: () => {}	},
+			'listRenderer': { default: () => { } },
+			'gridRenderer': { default: () => { } }
 		},
 		data: function() {
 			return {
