@@ -1,23 +1,26 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <listGrid view='list' :data=listGridData :listRenderer=listRenderer></listGrid>
+    <br/>
+    <listGrid view='list' :data=listGridData :listRenderer=listRenderer :gridRenderer=gridRenderer caption="Click on the icon to switch the view -->"></listGrid>
   </div>
 </template>
 
 <script>
 import listGrid from './listGrid'
-import listComponent from './listComponent';
+import listView from './listView';
+import gridView from './gridView';
 
 export default {
   name: 'hello',
   components: {
-    listGrid, listComponent
+    listGrid, listView, gridView
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      listRenderer: listComponent,
+      msg: 'List-Grid View Test App',
+      listRenderer: listView,
+      gridRenderer: gridView,
       listGridData: [{
         title: 'Tapping into UGC with Offerpop',
         url: 'https://voltagead.com/tapping-ugc-offerpop/',

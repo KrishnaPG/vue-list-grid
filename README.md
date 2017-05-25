@@ -2,6 +2,8 @@
 
 > Vue.js List + Grid Component
 
+Allows you to switch between list and grid view of the given data. You can use any `list` and `grid` controls of your choice to render the actual views.
+
 ## Build Setup
 
 ``` bash
@@ -27,4 +29,13 @@ npm run e2e
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Usage
+
+````
+<listGrid view='list' 
+          :data=listGridData 
+          :listRenderer=listRenderer 
+          :gridRenderer=gridRenderer 
+          caption="The Caption">
+</listGrid>
+````
